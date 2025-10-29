@@ -1,0 +1,29 @@
+# Prototype Expert System: Dendral
+class Dendral:
+    def __init__(self):
+        self.knowledge_base = {}
+    def add_knowledge(self, mass, structure):
+        self.knowledge_base[mass] = structure
+    def analyze_mass_spectrum(self, mass_spectrum):
+        possible_structures = []
+        for mass in mass_spectrum:
+            if mass in self.knowledge_base:
+                possible_structures.append(self.knowledge_base[mass])
+        return possible_structures
+    def generate_candidates(self, molecular_weight):
+        candidates = []
+        return candidates
+    def test_candidates(self, candidates):
+        # Validate generated candidates
+        valid_structures = []
+        for candidate in candidates:
+            if self.is_valid_structure(candidate):
+                valid_structures.append(candidate)
+        return valid_structures
+    def is_valid_structure(self, candidate):
+        return True
+dendral_system = Dendral()
+dendral_system.add_knowledge(18, "H2O")
+mass_spectrum = [18]
+results = dendral_system.analyze_mass_spectrum(mass_spectrum)
+print("Possible structures:", results)
